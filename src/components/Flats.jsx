@@ -47,12 +47,14 @@ export const Flats = () => {
 
   // RANGE filter - Price between min & max
   if(filter.priceMin || filter.priceMax) {
-    console.log(filter.priceMin, filter.priceMax)
+
     flatsFiltered = flatsFiltered.filter( flat => {
       let take = true
+      // is below min? => exclude!
       if(filter.priceMin && flat.pricePerNight < filter.priceMin) {
         take = false
       }
+      // is above max? => exclude !
       if (filter.priceMax && flat.pricePerNight > filter.priceMax) {
         take = false
       }
