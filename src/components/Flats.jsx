@@ -1,24 +1,16 @@
 import { useContext } from "react"
-import { DataContext } from "../App"
+import { FlatContext } from "../contexts/FlatContext"
 import { FlatFilter } from "./FlatFilter"
 import { FlatList } from "./FlatList"
 
-export const filterDefault = {
-  country: "",
-  city: "",
-  categories: new Set([]),
-  equipment: {
-    seaview: false,
-    wlan: false,
-    doubleBed: false,
-  },
-  priceMin: false,
-  priceMax: false,
-}
-
-
+/**
+ * Flats component is a wrapper for the flat page
+ * 
+ * It collects FILTER settings and applies it to create a LIST of Flats
+ * 
+ */
 export const Flats = () => {
-  const { flats, filter } = useContext(DataContext)
+  const { flats, filter } = useContext(FlatContext)
 
   let flatsFiltered = flats
 

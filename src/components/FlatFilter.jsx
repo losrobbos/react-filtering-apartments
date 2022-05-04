@@ -1,12 +1,14 @@
 import { useContext } from "react"
-import { DataContext } from "../App"
+import { FlatContext } from "../contexts/FlatContext"
 
 export const FlatFilter = () => {
-  const { filter, setFilter } = useContext(DataContext)
+  const { filter, setFilter } = useContext(FlatContext)
 
+  // update text search filters
   const onTextChange = (e) =>
     setFilter({ ...filter, [e.target.name]: e.target.value })
 
+  // update OR filters (using a javascript SET)
   const onCheckboxSetChange = (e) => {
     const filterKey = e.target.name
     const itemSelected = e.target.value
@@ -19,6 +21,7 @@ export const FlatFilter = () => {
     setFilter({ ...filter, [filterKey]: selectionNew })
   }
 
+  // update AND filters (using an object)
   const onCheckBoxObjectChange = (e) => {
     const optionsKey = e.target.name
     const itemSelected = e.target.value
