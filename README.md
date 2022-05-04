@@ -11,3 +11,5 @@ It shows combining MULTIPLE filter criteria including:
 - Matching by AND (e.g. WLAN + Seaview)
 
 The demo uses React CONTEXT to store the data centrally to make it easy to share the FILTER data between components.
+
+The demo just focussed on the filter logic. No significant effort was taken to make it nice looking or responsie :)
