@@ -11,11 +11,6 @@ const filterDefault = {
   city: "",
   categories: new Set([]),
   equipment: new Set([]),
-  // equipment: {
-  //   seaview: false,
-  //   wlan: false,
-  //   doubleBed: false,
-  // },
   priceMin: false,
   priceMax: false,
 }
