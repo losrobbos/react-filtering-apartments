@@ -75,13 +75,10 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* height: 150px; */
   padding: 10px;
   width: 100%;
-  margin-left: auto;
+  max-width: 500px;
   border: 1px solid #aaa;
-  /* border-radius: 10px; */
-  /* background-color: #ccc; */
   color: black;
 
   // card flexbox children
