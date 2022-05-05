@@ -5,9 +5,9 @@ import { FlatList } from "./FlatList"
 
 /**
  * Flats component is a wrapper for the flat page
- * 
+ *
  * It collects FILTER settings and applies it to create a LIST of Flats
- * 
+ *
  */
 export const Flats = () => {
   const { flats, filter } = useContext(FlatContext)
@@ -34,24 +34,25 @@ export const Flats = () => {
   // OR FILTER - Category (e.g. Apartment OR House OR (Apartment OR House))
   if (filter.categories.size) {
     flatsFiltered = flatsFiltered.filter((flat) =>
+      // if flat category is in just ONE of the allowed catgories => pick!
       filter.categories.has(flat.category)
     )
   }
 
   // AND Filter - Equipment (e.g. WLAN AND Seaview)
-  for(let [key, value] of Object.entries(filter.equipment) ) {
-    // in case a setting is TRUE => apply that filter
-    if( value ) flatsFiltered = flatsFiltered.filter(flat => flat[key] )
+  if (filter.equipment.size) {
+    // EACH stated criteria must match => so filter the set by each criteria
+    filter.equipment.forEach( item => {
+      flatsFiltered = flatsFiltered.filter((flat) => flat[item])
+    })
   }
 
-
   // RANGE filter - Price between min & max
-  if(filter.priceMin || filter.priceMax) {
-
-    flatsFiltered = flatsFiltered.filter( flat => {
+  if (filter.priceMin || filter.priceMax) {
+    flatsFiltered = flatsFiltered.filter((flat) => {
       let take = true
       // is below min? => exclude!
-      if(filter.priceMin && flat.pricePerNight < filter.priceMin) {
+      if (filter.priceMin && flat.pricePerNight < filter.priceMin) {
         take = false
       }
       // is above max? => exclude !
@@ -65,7 +66,7 @@ export const Flats = () => {
   return (
     <div className="flats">
       <FlatFilter />
-      <FlatList flats={ flatsFiltered } />
+      <FlatList flats={flatsFiltered} />
     </div>
   )
 }

@@ -1,7 +1,6 @@
 const FlatCard = ({ flat }) => {
   return (
     <div className="flat-card">
-
       {/* VENUE IMAGE */}
       <div className="image">
         <img

@@ -10,11 +10,12 @@ const filterDefault = {
   country: "",
   city: "",
   categories: new Set([]),
-  equipment: {
-    seaview: false,
-    wlan: false,
-    doubleBed: false,
-  },
+  equipment: new Set([]),
+  // equipment: {
+  //   seaview: false,
+  //   wlan: false,
+  //   doubleBed: false,
+  // },
   priceMin: false,
   priceMax: false,
 }

@@ -8,8 +8,9 @@ export const FlatFilter = () => {
   const onTextChange = (e) =>
     setFilter({ ...filter, [e.target.name]: e.target.value })
 
-  // update OR filters (using a javascript SET)
-  const onCheckboxSetChange = (e) => {
+  // update checkbox filters 
+  // (using a javascript SET => sets have the advantage to store arrays with unique (!) values only)
+  const onCheckboxChange = (e) => {
     const filterKey = e.target.name
     const itemSelected = e.target.value
     let selectionNew = new Set(filter[filterKey])
@@ -19,19 +20,6 @@ export const FlatFilter = () => {
       ? selectionNew.add(itemSelected)
       : selectionNew.delete(itemSelected)
     setFilter({ ...filter, [filterKey]: selectionNew })
-  }
-
-  // update AND filters (using an object)
-  const onCheckBoxObjectChange = (e) => {
-    const optionsKey = e.target.name
-    const itemSelected = e.target.value
-
-    const configObjectNew = {
-      ...filter[optionsKey],
-      [itemSelected]: !filter[optionsKey][itemSelected],
-    }
-
-    setFilter({ ...filter, [optionsKey]: configObjectNew })
   }
 
   return (
@@ -63,7 +51,7 @@ export const FlatFilter = () => {
             name="categories"
             type="checkbox"
             value="Apartment"
-            onChange={onCheckboxSetChange}
+            onChange={onCheckboxChange}
           />
           <span>Apartment</span>
         </div>
@@ -73,7 +61,7 @@ export const FlatFilter = () => {
             name="categories"
             type="checkbox"
             value="Holiday House"
-            onChange={onCheckboxSetChange}
+            onChange={onCheckboxChange}
           />
           <span>House</span>
         </div>
@@ -89,7 +77,7 @@ export const FlatFilter = () => {
             name="equipment"
             type="checkbox"
             value="doubleBeds"
-            onChange={onCheckBoxObjectChange}
+            onChange={onCheckboxChange}
           />
           <span>Double Beds</span>
         </div>
@@ -98,7 +86,7 @@ export const FlatFilter = () => {
             name="equipment"
             type="checkbox"
             value="wlan"
-            onChange={onCheckBoxObjectChange}
+            onChange={onCheckboxChange}
           />
           <span>WLAN</span>
         </div>
@@ -107,7 +95,7 @@ export const FlatFilter = () => {
             name="equipment"
             type="checkbox"
             value="seaview"
-            onChange={onCheckBoxObjectChange}
+            onChange={onCheckboxChange}
           />
           <span>Seeview</span>
         </div>
