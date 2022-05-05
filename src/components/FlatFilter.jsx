@@ -97,7 +97,7 @@ export const FlatFilter = () => {
             value="seaview"
             onChange={onCheckboxChange}
           />
-          <span>Seeview</span>
+          <span>Seaview</span>
         </div>
       </div>
       {/* end of ausstattung */}
