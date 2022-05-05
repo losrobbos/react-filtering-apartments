@@ -31,7 +31,7 @@ export const Flats = () => {
     )
   }
 
-  // OR FILTER - Category (e.g. Apartment OR House OR (Apartment OR House))
+  // OR FILTER - Category (e.g. Apartment OR House)
   if (filter.categories.size) {
     flatsFiltered = flatsFiltered.filter((flat) =>
       // if flat category is in just ONE of the allowed catgories => pick!
