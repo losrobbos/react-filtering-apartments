@@ -1,6 +1,8 @@
 const FlatCard = ({ flat }) => {
   return (
     <div className="flat-card">
+
+      {/* VENUE IMAGE */}
       <div className="image">
         <img
           src={`//source.unsplash.com/100x100/?${
@@ -8,6 +10,8 @@ const FlatCard = ({ flat }) => {
           }`}
         />
       </div>
+
+      {/* CONTENT */}
       <div className="card-body">
         <div>{flat.title}</div>
         <div>{flat.category}</div>
@@ -21,6 +25,8 @@ const FlatCard = ({ flat }) => {
           {flat.wlan && <span>Free WLAN</span>}
         </div>
       </div>
+
+      {/* ACTIONS */}
       <div className="card-actions">
         <div>{flat.pricePerNight} &euro; / per Night</div>
         <div>

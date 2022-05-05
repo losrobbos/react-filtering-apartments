@@ -36,7 +36,7 @@ export const FlatFilter = () => {
 
   return (
     <form className="flat-filter">
-      <h3>Flat Filter</h3>
+      <h3>Location</h3>
 
       {/* LOCATION */}
       <div className="location">
@@ -56,7 +56,7 @@ export const FlatFilter = () => {
 
       {/* CATEGORY  */}
       <div className="categories">
-        <h3>Unterkunftstyp</h3>
+        <h3>Type</h3>
 
         <div className="filter-item">
           <input
@@ -75,14 +75,14 @@ export const FlatFilter = () => {
             value="Holiday House"
             onChange={onCheckboxSetChange}
           />
-          <span>Ferienhaus</span>
+          <span>House</span>
         </div>
       </div>
       {/* end of Category */}
 
       {/* Ausstattung */}
       <div className="equipments">
-        <h3>Ausstattung</h3>
+        <h3>Equipment</h3>
 
         <div className="filter-item">
           <input
@@ -116,16 +116,18 @@ export const FlatFilter = () => {
 
       {/* PRICE RANGE */}
       <div className="priceRange">
+
+        <h3>Price Range</h3>
         {/* MIN */}
         <div className="min">
           <label>Min:</label>
-          <input type="text" name="priceMin" onChange={onTextChange} />
+          <input type="number" min="0" name="priceMin" onChange={onTextChange} />
         </div>
 
         {/* MAX */}
         <div className="max">
           <label>Max:</label>
-          <input type="text" name="priceMax" onChange={onTextChange} />
+          <input type="number" min="0" name="priceMax" onChange={onTextChange} />
         </div>
       </div>
       {/* END of Location*/}
