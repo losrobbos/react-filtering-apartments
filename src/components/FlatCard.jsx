@@ -4,9 +4,7 @@ const FlatCard = ({ flat }) => {
       {/* VENUE IMAGE */}
       <div className="image">
         <img
-          src={
-            flat.category === "Apartment" ? "apartment1.jpg" : "ferienhaus1.jpg"
-          }
+          src={ `${flat.image}.jpg` }
         />
       </div>
 
