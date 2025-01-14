@@ -43,8 +43,8 @@ export const FlatFilter = () => {
       {/* END of Location*/}
 
       {/* CATEGORY  */}
-      <div className="categories">
         <h3>Type</h3>
+      <div className="categories">
 
         <div className="filter-item">
           <label>
@@ -73,8 +73,8 @@ export const FlatFilter = () => {
       {/* end of Category */}
 
       {/* Ausstattung */}
+      <h3>Equipment</h3>
       <div className="equipments">
-        <h3>Equipment</h3>
 
         <div className="filter-item">
           <label>
@@ -113,8 +113,8 @@ export const FlatFilter = () => {
       {/* end of ausstattung */}
 
       {/* PRICE RANGE */}
+      <h3>Price Range</h3>
       <div className="priceRange">
-        <h3>Price Range</h3>
         {/* MIN */}
         <div className="min">
           <label>Min:</label>
