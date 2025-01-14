@@ -12,7 +12,7 @@ const FlatCard = ({ flat }) => {
 
       {/* CONTENT */}
       <div className="card-body">
-        <div>{flat.title}</div>
+        <h4>{flat.title}</h4>
         <div>{flat.category}</div>
         <div>
           {flat.city} ({flat.country})

@@ -152,21 +152,43 @@ main {
   }
   // make title stand out a bit
   .card-body {
-    // card title
-    & > :first-child {
-      color: brown;
+
+    font-size: 1.1rem;
+    text-align: center;
+
+    @media (width >= 650px) {
       font-size: 1rem;
+      text-align: left;
+    }
+
+    // card title
+    h4 {
+      margin: 0;
       padding: 0.5rem 0;
+
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: brown;
+
+      @media (width >= 650px) {
+        font-size: 1.2rem;
+      }
     }
   }
 
   // options => flowing flexbox tags
   .card-equipment {
-    padding: 5px 0;
+    padding: 10px 0;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
     font-size: 0.8em;
+    
+    @media (width >= 650px) {
+      justify-content: flex-start;
+      gap: 5px;
+    }
   }
 
   .card-actions {
