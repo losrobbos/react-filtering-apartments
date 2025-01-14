@@ -4,15 +4,15 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -21,6 +21,8 @@ header {
 
   h1 {
     margin: 0;
+    padding: 1rem 0;
+    color: brown;
   }
 }
 
@@ -34,7 +36,6 @@ main {
 .flats {
   display: flex;
   justify-content: space-between;
-  
 }
 
 // FILTER
@@ -43,6 +44,7 @@ main {
   font-size: 0.8rem;
 
   h3 {
+    color: brown;
     margin-bottom: 5px;
   }
 
@@ -57,7 +59,6 @@ main {
   input[type="number"] {
     max-width: 50px;
   }
-
 }
 
 // FLAT LISTING
@@ -68,7 +69,6 @@ main {
   gap: 10px;
   font-size: 0.8rem;
 }
-
 
 // FLAT CARD Item
 .flat-card {
@@ -105,7 +105,6 @@ main {
     &:hover img {
       scale: 1.1;
     }
-
   }
 
   img {
@@ -115,24 +114,8 @@ main {
     transform-origin: 0% 0%;
     transition: 1s;
   }
-  button {
-    margin: 5px 0;
-    padding: 0.5rem 2rem;
-    border-radius: 10px;
-    background-color: rgb(228, 196, 18);
-    text-transform: uppercase;
-    color: brown;
-    font-weight: 900;
-    opacity: 0.8;
-    
-    &:hover {
-      opacity: 1;
-    }
-  }
-
   // make title stand out a bit
   .card-body {
-    
     // card title
     & > :first-child {
       color: brown;
@@ -148,6 +131,29 @@ main {
     flex-wrap: wrap;
     gap: 10px;
     font-size: 0.8em;
+  }
+
+  .card-actions {
+    // price
+    span {
+      font-size: 1.3rem;
+      color: brown;
+    }
+
+    button {
+      margin: 5px 0;
+      padding: 0.5rem 2rem;
+      border-radius: 10px;
+      background-color: rgb(228, 196, 18);
+      text-transform: uppercase;
+      color: brown;
+      font-weight: 800;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }
 //  END OF FLAT-CARD

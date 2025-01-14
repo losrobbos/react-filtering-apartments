@@ -27,7 +27,7 @@ const FlatCard = ({ flat }) => {
 
       {/* ACTIONS */}
       <div className="card-actions">
-        <div>{flat.pricePerNight} &euro; / per Night</div>
+        <div><span>{flat.pricePerNight} &euro;</span> / per Night</div>
         <div>
           <button>Book</button>
         </div>

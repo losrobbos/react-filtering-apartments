@@ -1,26 +1,26 @@
-import { useContext } from "react"
-import { FlatContext } from "../contexts/FlatContext"
+import { useContext } from "react";
+import { FlatContext } from "../contexts/FlatContext";
 
 export const FlatFilter = () => {
-  const { filter, setFilter } = useContext(FlatContext)
+  const { filter, setFilter } = useContext(FlatContext);
 
   // update text search filters
   const onTextChange = (e) =>
-    setFilter({ ...filter, [e.target.name]: e.target.value })
+    setFilter({ ...filter, [e.target.name]: e.target.value });
 
-  // update checkbox filters 
+  // update checkbox filters
   // (using a javascript SET => sets have the advantage to store arrays with unique (!) values only)
   const onCheckboxChange = (e) => {
-    const filterKey = e.target.name
-    const itemSelected = e.target.value
-    let selectionNew = new Set(filter[filterKey])
+    const filterKey = e.target.name;
+    const itemSelected = e.target.value;
+    let selectionNew = new Set(filter[filterKey]);
 
     // toggle item in set
     e.target.checked
       ? selectionNew.add(itemSelected)
-      : selectionNew.delete(itemSelected)
-    setFilter({ ...filter, [filterKey]: selectionNew })
-  }
+      : selectionNew.delete(itemSelected);
+    setFilter({ ...filter, [filterKey]: selectionNew });
+  };
 
   return (
     <form className="flat-filter">
@@ -47,23 +47,27 @@ export const FlatFilter = () => {
         <h3>Type</h3>
 
         <div className="filter-item">
-          <input
-            name="categories"
-            type="checkbox"
-            value="Apartment"
-            onChange={onCheckboxChange}
-          />
-          <span>Apartment</span>
+          <label>
+            <input
+              name="categories"
+              type="checkbox"
+              value="Apartment"
+              onChange={onCheckboxChange}
+            />
+            <span>Apartment</span>
+          </label>
         </div>
 
         <div className="filter-item">
-          <input
-            name="categories"
-            type="checkbox"
-            value="Holiday House"
-            onChange={onCheckboxChange}
-          />
-          <span>House</span>
+          <label>
+            <input
+              name="categories"
+              type="checkbox"
+              value="Holiday House"
+              onChange={onCheckboxChange}
+            />
+            <span>House</span>
+          </label>
         </div>
       </div>
       {/* end of Category */}
@@ -73,52 +77,67 @@ export const FlatFilter = () => {
         <h3>Equipment</h3>
 
         <div className="filter-item">
-          <input
-            name="equipment"
-            type="checkbox"
-            value="doubleBeds"
-            onChange={onCheckboxChange}
-          />
-          <span>Double Beds</span>
+          <label>
+            <input
+              name="equipment"
+              type="checkbox"
+              value="doubleBeds"
+              onChange={onCheckboxChange}
+            />
+            <span>Double Beds</span>
+          </label>
         </div>
         <div className="filter-item">
-          <input
-            name="equipment"
-            type="checkbox"
-            value="wlan"
-            onChange={onCheckboxChange}
-          />
-          <span>WLAN</span>
+          <label>
+            <input
+              name="equipment"
+              type="checkbox"
+              value="wlan"
+              onChange={onCheckboxChange}
+            />
+            <span>WLAN</span>
+          </label>
         </div>
         <div className="filter-item">
-          <input
-            name="equipment"
-            type="checkbox"
-            value="seaview"
-            onChange={onCheckboxChange}
-          />
-          <span>Seaview</span>
+          <label>
+            <input
+              name="equipment"
+              type="checkbox"
+              value="seaview"
+              onChange={onCheckboxChange}
+            />
+            <span>Seaview</span>
+          </label>
         </div>
       </div>
       {/* end of ausstattung */}
 
       {/* PRICE RANGE */}
       <div className="priceRange">
-
         <h3>Price Range</h3>
         {/* MIN */}
         <div className="min">
           <label>Min:</label>
-          <input type="number" min="0" name="priceMin" onChange={onTextChange} />
+          <input
+            type="number"
+            min="0"
+            name="priceMin"
+            onChange={onTextChange}
+          />
         </div>
 
         {/* MAX */}
         <div className="max">
           <label>Max:</label>
-          <input type="number" min="0" name="priceMax" onChange={onTextChange} />
+          <input
+            type="number"
+            min="0"
+            name="priceMax"
+            onChange={onTextChange}
+          />
         </div>
       </div>
       {/* END of Location*/}
     </form>
-  )
-}
+  );
+};
