@@ -4,9 +4,9 @@ const FlatCard = ({ flat }) => {
       {/* VENUE IMAGE */}
       <div className="image">
         <img
-          src={`//source.unsplash.com/100x100/?${
-            flat.category === "Apartment" ? "apartment" : "house"
-          }`}
+          src={
+            flat.category === "Apartment" ? "apartment1.jpg" : "ferienhaus1.jpg"
+          }
         />
       </div>
 
@@ -33,7 +33,7 @@ const FlatCard = ({ flat }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FlatCard
+export default FlatCard;
