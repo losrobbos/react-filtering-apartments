@@ -1,4 +1,3 @@
-// import './App.scss'
 import { Flats } from './components/Flats'
 import { FlatContextProvider } from './contexts/FlatContext'
 

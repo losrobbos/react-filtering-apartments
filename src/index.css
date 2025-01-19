@@ -32,7 +32,7 @@ main {
   padding: 20px;
 }
 
-// FLATS component
+/* FLATS component */
 .flats {
   display: grid;
 
@@ -42,7 +42,7 @@ main {
   }
 }
 
-// FILTER
+/* FILTER */
 .flat-filter {
 
   display: flex;
@@ -64,7 +64,7 @@ main {
     }
   }
 
-  // reponsive filter boxes
+  /* reponsive filter boxes */
   .categories, .equipments, .priceRange {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -93,7 +93,7 @@ main {
   }
 }
 
-// FLAT LISTING
+/* FLAT LISTING */
 .flat-list {
   flex-basis: 70%;
   display: flex;
@@ -103,7 +103,7 @@ main {
   font-size: 0.8rem;
 }
 
-// FLAT CARD Item
+/* FLAT CARD Item */
 .flat-card {
   display: flex;
   flex-direction: column;
@@ -121,7 +121,7 @@ main {
     flex-direction: row;
   }
 
-  // card flexbox children
+  /* card flexbox children */
   & > :nth-child(1) {
     flex-basis: 20%;
   }
@@ -152,7 +152,7 @@ main {
     transform-origin: 0% 0%;
     transition: 1s;
   }
-  // make title stand out a bit
+  /* make title stand out a bit */
   .card-body {
 
     font-size: 1.1rem;
@@ -163,7 +163,7 @@ main {
       text-align: left;
     }
 
-    // card title
+    /* card title */
     h4 {
       margin: 0;
       padding: 0.5rem 0;
@@ -178,7 +178,7 @@ main {
     }
   }
 
-  // options => flowing flexbox tags
+  /* options => flowing flexbox tags */
   .card-equipment {
     padding: 10px 0;
     display: flex;
@@ -194,7 +194,7 @@ main {
   }
 
   .card-actions {
-    // price
+    /* price */
     span {
       font-size: 1.3rem;
       color: brown;
@@ -217,4 +217,4 @@ main {
     }
   }
 }
-//  END OF FLAT-CARD
+/* END OF FLAT-CARD */
