@@ -35,9 +35,10 @@ main {
 /* FLATS component */
 .flats {
   display: grid;
+  padding: 1rem 0;
 
   @media (width >= 650px) {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 200px 1fr;
     gap: 2rem;
   }
 }
@@ -48,8 +49,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
-  padding: 1rem 0;
 
   h3 {
     color: brown;
@@ -98,9 +97,15 @@ main {
   flex-basis: 70%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
-  padding: 1rem 0;
   font-size: 0.8rem;
+  padding-top: 5rem;
+
+  @media (width > 650px) {
+    padding: 0;
+    align-items: flex-start;
+  }
 }
 
 /* FLAT CARD Item */
@@ -112,12 +117,13 @@ main {
   align-items: center;
   padding: 1rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
   border: 1px solid #aaa;
   border-radius: 10px;
   color: black;
 
   @media (width >= 650px) {
+    max-width: 500px;
     flex-direction: row;
   }
 
@@ -203,16 +209,16 @@ main {
     button {
       margin: 5px 0;
       padding: 0.5rem 2rem;
+      border: none;
       border-radius: 10px;
       background-color: rgb(228, 196, 18);
       text-transform: uppercase;
       color: brown;
-      font-weight: 800;
-      opacity: 0.8;
+      font-weight: 600;
       cursor: pointer;
-
+      
       &:hover {
-        opacity: 1;
+        box-shadow: 2px 2px 3px rgba(0,0,0, 0.5);
       }
     }
   }
